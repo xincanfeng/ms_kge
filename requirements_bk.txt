@@ -1,0 +1,8 @@
+torch >= 1.0.0
+numpy >= 1.15.4 # For data preparation process
+scikit-learn >= 0.20.2 # For AUC-PR
+pandas
+openpyxl
+
+# For cuda=11.6, manually run the following:
+# pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
