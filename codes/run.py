@@ -72,6 +72,7 @@ def parse_args(args=None):
     parser.add_argument('--submodel_batch_size', default=1024, type=int, help='Batch size of submodel\'s prediction')
     
     parser.add_argument('--dump_freqs', action='store_true', help='Dump freqneucy information of subsampling')
+    parser.add_argument('--dump_scores', action='store_true', help='Dump score information of CBS, MBS, or MIX for significance test')
     
     parser.add_argument('--max_steps', default=100000, type=int)
     parser.add_argument('--warm_up_steps', default=None, type=int)
@@ -295,6 +296,9 @@ def main(args):
         train_iterator = BidirectionalOneShotIterator(train_dataloader_head, train_dataloader_tail)
         if args.dump_freqs:
             train_dataloader_head.dataset.dump_freqs()
+            exit()
+        if args.dump_scores:
+            train_dataloader_head.dataset.dump_scores()
             exit()
         
         # Set training configuration

@@ -14,6 +14,8 @@ import json
 import model
 import logging
 
+from collections import defaultdict
+
 class TrainDataset(Dataset):
     def __init__(self, args, triples, nentity, nrelation, negative_sample_size, mode):
         self.args = args
@@ -26,6 +28,7 @@ class TrainDataset(Dataset):
         self.mode = mode
         self.true_head, self.true_tail = self.get_true_head_and_tail(self.triples)
         self.freq_count = self.count_frequency(triples, args.count_start)
+        self.score_count = self.ave_query_score_for_significance_test(triples,triples,args)
         if args.mbs_default or args.mbs_freq or args.mbs_uniq:
             # Cannot allow to combine different subsampling methods
             assert((args.mbs_freq^args.mbs_uniq)^args.mbs_default)
@@ -78,9 +81,9 @@ class TrainDataset(Dataset):
             assert((self.args.mbs_freq^self.args.mbs_uniq)^self.args.mbs_default)
             # Cannot allow to do model-based subsampling without any trained model
             assert(self.args.subsampling_model != None)
-            return positive_sample, negative_sample, self.mbs_count[(head, relation, tail)], self.mbs_count[(head, relation)], self.mbs_count[(tail, -relation-1)], self.freq_count[(head, relation)], self.freq_count[(tail, -relation-1)], self.mode
+            return positive_sample, negative_sample, self.mbs_count[(head, relation, tail)], self.mbs_count[(head, relation)], self.mbs_count[(tail, -relation-1)], self.freq_count[(head, relation)], self.freq_count[(tail, -relation-1)], self.score_count[(head, relation)], self.score_count[(tail, -relation-1)], self.mode
         else:
-            return positive_sample, negative_sample, self.freq_count[(head, relation)], self.freq_count[(tail, -relation-1)], self.mode
+            return positive_sample, negative_sample, self.freq_count[(head, relation)], self.freq_count[(tail, -relation-1)], self.score_count[(head, relation)], self.score_count[(tail, -relation-1)], self.mode
     
     @staticmethod
     def collate_fn(data):
@@ -124,7 +127,7 @@ class TrainDataset(Dataset):
     @staticmethod
     def count_submodel_freq(triples, all_true_triples, args):
         '''
-        Count submodel-based frequenciess
+        Count submodel-based frequencies
         '''
         # Restore submodel from checkpoint directory
         with open(os.path.join(args.subsampling_model, 'config.json'), 'r') as fjson:
@@ -193,6 +196,71 @@ class TrainDataset(Dataset):
                 for key in self.mbs_count.keys():
                     if len(key) == 2:
                         f_mbs_out.write("\t".join([str(e) for e in [key[0],key[1],self.mbs_count[key]]]) + "\n")
+
+    @staticmethod
+    def ave_query_score_for_significance_test(triples, all_true_triples, args):
+        '''
+        To run the significance test, we need to consider the average scores for each query. 
+        We need to run this for CBS model, MBS model, and MIX model, get their query scores and run significance test using "wilcoxon_score.py"
+        '''
+        # Restore model from checkpoint directory
+        with open(os.path.join(args.save_path, 'config.json'), 'r') as fjson:
+            argparse_dict = json.load(fjson)
+        final_model = model.KGEModel(
+            model_name=argparse_dict['model'],
+            nentity=argparse_dict['nentity'],
+            nrelation=argparse_dict['nrelation'],
+            hidden_dim=argparse_dict['hidden_dim'],
+            gamma=argparse_dict['gamma'],
+            double_entity_embedding=argparse_dict['double_entity_embedding'],
+            double_relation_embedding=argparse_dict['double_relation_embedding']
+        )
+        logging.info('Loading checkpoint %s...' % args.save_path)
+        checkpoint = torch.load(os.path.join(args.save_path, 'checkpoint'))
+        final_model.load_state_dict(checkpoint['model_state_dict'])
+        final_model.eval()
+        final_model = final_model.cuda()
+        
+        dataset = DataLoader(
+            SubModelDataset(
+                triples, 
+                all_true_triples, 
+                args.nentity, 
+                args.nrelation, 
+                'head-batch'
+            ), 
+            batch_size=args.batch_size,
+            num_workers=max(1, args.cpu_num//2), 
+            collate_fn=SubModelDataset.collate_fn
+        )
+    
+        with torch.no_grad():
+            count = defaultdict(list)  # 改用defaultdict来存储多个得分
+            for positive_sample, mode in dataset:
+                if args.cuda:
+                    positive_sample = positive_sample.cuda()
+
+                scores = torch.exp(final_model(positive_sample)).squeeze(-1)
+                
+                for (head, relation, tail), score in zip(positive_sample, scores):
+                    head, relation, tail, score = [e.item() for e in [head, relation, tail, score]]
+                    count[(head, relation, tail)].append(score)
+                    count[(head, relation)].append(score)
+                    count[(tail, -relation-1)].append(score)
+
+            # 计算每个查询的平均得分
+            for key in count:
+                count[key] = sum(count[key]) / len(count[key])
+            
+        return count
+    
+    def dump_scores(self):
+        file_dump_score = os.path.join(self.args.save_path, 'file_dump_score.tsv')
+        print(file_dump_score)
+        with open(file_dump_score, "w") as f_out:
+            for key in self.score_count.keys():
+                if len(key) == 2:
+                    f_out.write("\t".join([str(e) for e in [key[0],key[1],self.score_count[key]]]) + "\n")
  
     @staticmethod
     def get_true_head_and_tail(triples):
