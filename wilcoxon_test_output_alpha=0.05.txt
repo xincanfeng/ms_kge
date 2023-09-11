@@ -1,0 +1,288 @@
+Group 1
+MBS Statistics: 4158072316.0, p-value: 0.0
+MIX Statistics: 4207144293.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 2
+MBS Statistics: 3101419819.5, p-value: 0.0
+MIX Statistics: 3220269788.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 3
+MBS Statistics: 474201540.5, p-value: 0.0
+MIX Statistics: 870461282.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 4
+MBS Statistics: 4317368593.5, p-value: 0.0
+MIX Statistics: 4363995428.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 5
+MBS Statistics: 3033415880.0, p-value: 0.0
+MIX Statistics: 3217893803.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 6
+MBS Statistics: 295267530.5, p-value: 0.0
+MIX Statistics: 341711400.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 7
+MBS Statistics: 5537191584.0, p-value: 0.00011513292506071344
+MIX Statistics: 5285881894.5, p-value: 1.4241201771636217e-79
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 8
+MBS Statistics: 5334147418.5, p-value: 1.2515187090267874e-57
+MIX Statistics: 5366192459.5, p-value: 5.027369320296865e-45
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 9
+MBS Statistics: 4881031639.0, p-value: 0.0
+MIX Statistics: 4721693673.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 10
+MBS Statistics: 5006105853.0, p-value: 6.17176738810997e-278
+MIX Statistics: 4664435234.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 11
+MBS Statistics: 4385551398.5, p-value: 0.0
+MIX Statistics: 4209556798.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 12
+MBS Statistics: 2615471712.0, p-value: 0.0
+MIX Statistics: 3107706620.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 13
+MBS Statistics: 5017423218.0, p-value: 1.486440720241053e-267
+MIX Statistics: 4952704713.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 14
+MBS Statistics: 4649232738.0, p-value: 0.0
+MIX Statistics: 4206186155.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 15
+MBS Statistics: 2516738411.0, p-value: 0.0
+MIX Statistics: 3318203011.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 16
+MBS Statistics: 1744348591.0, p-value: 0.0
+MIX Statistics: 2557659164.5, p-value: 3.0718582015924005e-36
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 17
+MBS Statistics: 2097402789.0, p-value: 0.0
+MIX Statistics: 1967350268.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 18
+MBS Statistics: 2151777595.5, p-value: 0.0
+MIX Statistics: 2217392269.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 19
+MBS Statistics: 2349020316.5, p-value: 1.948620895260362e-257
+MIX Statistics: 2271493994.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 20
+MBS Statistics: 2414403777.5, p-value: 3.7780040525841986e-166
+MIX Statistics: 2334880918.5, p-value: 8.109804448320575e-280
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 21
+MBS Statistics: 2557477257.5, p-value: 2.4175532006364155e-36
+MIX Statistics: 2570295898.5, p-value: 2.1662252319756315e-29
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 22
+MBS Statistics: 2270117984.5, p-value: 0.0
+MIX Statistics: 2420523744.5, p-value: 1.627093693386984e-158
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 23
+MBS Statistics: 2481779383.5, p-value: 4.546723293619889e-93
+MIX Statistics: 2452942933.5, p-value: 9.688691129127707e-122
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 24
+MBS Statistics: 2509552841.0, p-value: 3.8609691303734857e-69
+MIX Statistics: 2529923020.5, p-value: 6.919316358500511e-54
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 25
+MBS Statistics: 1218822526.5, p-value: 0.0
+MIX Statistics: 1263827539.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 26
+MBS Statistics: 2199702833.0, p-value: 0.0
+MIX Statistics: 2208318533.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 27
+MBS Statistics: 1965082170.5, p-value: 0.0
+MIX Statistics: 2116160701.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 28
+MBS Statistics: 1326015882.5, p-value: 0.0
+MIX Statistics: 1452471843.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 29
+MBS Statistics: 2417951012.5, p-value: 9.036398669006787e-162
+MIX Statistics: 2441011708.5, p-value: 9.606933216821002e-135
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 30
+MBS Statistics: 2510134495.0, p-value: 1.1199412648242833e-68
+MIX Statistics: 2554489107.0, p-value: 4.492123028102004e-38
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 31
+MBS Statistics: 15568509873.5, p-value: 0.0
+MIX Statistics: 14476572099.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 32
+MBS Statistics: 18189131915.5, p-value: 0.0
+MIX Statistics: 17090322335.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 33
+MBS Statistics: 24393223952.5, p-value: 0.0
+MIX Statistics: 23098673752.0, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 34
+MBS Statistics: 23751774677.0, p-value: 0.0
+MIX Statistics: 26186673449.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 35
+MBS Statistics: 22676140371.5, p-value: 0.0
+MIX Statistics: 33489514912.5, p-value: 0.0
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+
+Group 36
+MBS Statistics: 37681602369.5, p-value: 1.1178270325438708e-26
+MIX Statistics: 38081483351.0, p-value: 4.29684975320655e-07
+---------MBS results---------
+MBS: Reject the null hypothesis
+---------MIX results---------
+MIX: Reject the null hypothesis
+

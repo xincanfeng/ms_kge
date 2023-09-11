@@ -299,6 +299,7 @@ def main(args):
             exit()
         if args.dump_scores:
             train_dataloader_head.dataset.dump_scores()
+            print("finished")
             exit()
         
         # Set training configuration

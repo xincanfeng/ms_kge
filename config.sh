@@ -101,7 +101,7 @@ DUMP_SCORE="--dump_scores"
 
 # Suffix of the model directory: 
 # SUFFIX="${SUB_TYPE}_${MR}_${SUB_MODEL_NAME}:${SUB_TEMP}:$SEED"
-SUFFIX="--mbs_default_1.0_ComplEx_FB15k-237_none:-seed=43:-stp=0.5:-seed=43"
+SUFFIX="--mbs_uniq_0.3_RotatE_YAGO3-10_none:-seed=43:-stp=0.5:-seed=43"
 
 # Define required memory
 memory_required=10000
@@ -129,7 +129,7 @@ done
 exps=(
     # # Configuration for RotatE
     # 
-    "bash run.sh train RotatE FB15k-237 %s ${SUFFIX} 1024 256 1000 9.0 1.0 0.00005 100000 16 -de ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &" 
+    # "bash run.sh train RotatE FB15k-237 %s ${SUFFIX} 1024 256 1000 9.0 1.0 0.00005 100000 16 -de ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &" 
     # "bash run.sh train RotatE wn18rr %s ${SUFFIX} 512 1024 500 6.0 0.5 0.00005 80000 8 -de ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &" 
     # "bash run.sh train RotatE YAGO3-10 %s ${SUFFIX} 1024 400 500 24.0 1.0 0.0002 100000 4 -de ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
     # "bash run.sh train RotatE FB15k %s ${SUFFIX} 1024 256 1000 24.0 1.0 0.0001 150000 16 -de ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} &"
@@ -146,12 +146,12 @@ exps=(
     #  
     # "bash run.sh train HAKE FB15k-237 %s ${SUFFIX} 1024 256 1000 9.0 1.0 0.00005 100000 16 --modulus_weight 3.5 --phase_weight 1.0 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
     # "bash run.sh train HAKE wn18rr %s ${SUFFIX} 512 1024 500 6.0 0.5 0.00005 80000 8 --modulus_weight 0.5 --phase_weight 0.5 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &" 
-    # "bash run.sh train HAKE YAGO3-10 %s ${SUFFIX} 1024 256 500 24.0 1.0 0.0002 180000 4 --modulus_weight 1.0 --phase_weight 0.5 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
+    "bash run.sh train HAKE YAGO3-10 %s ${SUFFIX} 1024 256 500 24.0 1.0 0.0002 180000 4 --modulus_weight 1.0 --phase_weight 0.5 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
     # 
     # # Configuration for ComplEx
     # 
     # "bash run.sh train ComplEx FB15k-237 %s ${SUFFIX} 1024 256 1000 200.0 1.0 0.001 100000 16 -de -dr -r 0.00001 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
-    # "bash run.sh train ComplEx wn18rr %s ${SUFFIX} 512 1024 500 200.0 1.0 0.002 80000 8 -de -dr -r 0.000005 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &"
+    # "bash run.sh train ComplEx wn18rr %s ${SUFFIX} 512 1024 500 200.0 1.0 0.002 80000 8 -de -dr -r 0.000005 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} ${DUMP} ${DUMP_SCORE} &" 
     # "bash run.sh train ComplEx FB15k %s ${SUFFIX} 1024 256 1000 500.0 1.0 0.001 150000 16 -de -dr -r 0.000002 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} &"
     # "bash run.sh train ComplEx wn18 %s ${SUFFIX} 512 1024 500 200.0 1.0 0.001 80000 8 -de -dr -r 0.00001 ${SUB_MODEL} ${SUB_TEMP} ${SUB_TYPE} ${MBS_RATIO} ${SEED} &"
     # 
